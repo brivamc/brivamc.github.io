@@ -12,30 +12,18 @@ export interface MyJobExperience {
 
 export const myJobExperiences: MyJobExperience[] = [
   { index: 0,
-    jobTitle: "Web Developer (Remote)",
-    employer: "Social Knowledge, LLC",
-    startDate: new Date(2018, 5),
-    endDate: new Date(2019, 10),
+    jobTitle: "Software Developer (Remote)",
+    employer: "HyperQube",
+    startDate: new Date(2020, 12),
     jobDetails: [
-      "Developed web applications for RV trip planning using Google's map API",
-      "Planned and implemented new features using JavaScript to enhance the consumers' experience",
-      "Regularly debugged and refined existing features of the web application"
+      "Collaborated as a team of 3 to architect and build a new iteration (v3) of a highly-interactable web-app from the ground up, developing new and refining old features",
+      "Constructed the UI and UX of the v3 app as well as implement features for our API service",
+      "Tested and fixed software bugs and optimized operation speed",
+      "Extensively peer-reviewed code using Github's pull requests"
     ],
-    link: "https://tripwizard.rvlife.com/"
+    link: "https://hyperqube.io/"
   },
   { index: 1,
-    jobTitle: "Web Developer (Volunteer)",
-    employer: "Lori's Hands",
-    startDate: new Date(2019, 2),
-    endDate: new Date(2019, 5),
-    jobDetails: [
-      "Collaborated as a team of 6 to create a dynamic spreadsheet of all volunteers in the organization",
-      "Programmatically created a mega-spreadsheet to combine information from several Google forms into one centralized location",
-      "Designed and implemented a web application using the mega-spreadsheet data to display volunteer information with optional filtering to view select data",
-    ],
-    link: "https://lorishands.org/"
-  },
-  { index: 2,
     jobTitle: "Junior Developer (Remote)",
     employer: "FineLine Websites & IT Consulting",
     startDate: new Date(2020, 7),
@@ -48,16 +36,28 @@ export const myJobExperiences: MyJobExperience[] = [
     ],
     link: "https://www.finelinewebsites.com/"
   },
-  { index: 3,
-    jobTitle: "Software Developer (Remote)",
-    employer: "HyperQube",
-    startDate: new Date(2020, 12),
+  { index: 2,
+    jobTitle: "Web Developer (Volunteer)",
+    employer: "Lori's Hands",
+    startDate: new Date(2019, 2),
+    endDate: new Date(2019, 5),
     jobDetails: [
-      "Collaborated as a team of 3 to architect and build a new iteration (v3) of a highly-interactable web-app from the ground up, developing new and refining old features",
-      "Constructed the UI and UX of the v3 app as well as implement features for our API service",
-      "Tested and fixed software bugs and optimized operation speed",
-      "Extensively peer-reviewed code using Github's pull requests"
+      "Collaborated as a team of 6 to create a dynamic spreadsheet of all volunteers in the organization",
+      "Programmatically created a mega-spreadsheet to combine information from several Google forms into one centralized location",
+      "Designed and implemented a web application using the mega-spreadsheet data to display volunteer information with optional filtering to view select data",
     ],
-    link: "https://hyperqube.io/"
-  }
+    link: "https://lorishands.org/"
+  },
+  { index: 3,
+    jobTitle: "Web Developer (Remote)",
+    employer: "Social Knowledge, LLC",
+    startDate: new Date(2018, 5),
+    endDate: new Date(2019, 10),
+    jobDetails: [
+      "Developed web applications for RV trip planning using Google's map API",
+      "Planned and implemented new features using JavaScript to enhance the consumers' experience",
+      "Regularly debugged and refined existing features of the web application"
+    ],
+    link: "https://tripwizard.rvlife.com/"
+  },
 ]
