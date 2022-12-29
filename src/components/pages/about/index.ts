@@ -1,10 +1,10 @@
 import { Page } from "../../../types/pages";
-import { About } from "./about";
+import { AboutMe } from "./AboutMe";
 
 export const aboutPage: Page = {
   props: [
     {
-      component: About,
+      component: AboutMe,
       route: "/about",
       title: "About Me"
     }
