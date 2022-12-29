@@ -1,10 +1,10 @@
 import { Page } from "../../../types/pages";
-import { Experience } from "./experience";
+import { MyExperience } from "./MyExperience";
 
 export const experiencePage: Page = {
   props: [
     {
-      component: Experience,
+      component: MyExperience,
       route: "/experience",
       title: "My Experience"
     }

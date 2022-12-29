@@ -1,10 +1,10 @@
 import { Page } from "../../../types/pages";
-import { Projects } from "./projects";
+import { MyProjects } from "./MyProjects";
 
 export const projectsPage: Page = {
   props: [
     {
-      component: Projects,
+      component: MyProjects,
       route: "/projects",
       title: "My Projects"
     }

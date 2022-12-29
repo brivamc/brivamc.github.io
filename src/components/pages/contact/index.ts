@@ -1,10 +1,10 @@
 import { Page } from "../../../types/pages";
-import { Contact } from "./contact";
+import { ContactMe } from "./ContactMe";
 
 export const contactPage: Page = {
   props: [
     {
-      component: Contact,
+      component: ContactMe,
       route: "/contact",
       title: "Contact Me"
     }
