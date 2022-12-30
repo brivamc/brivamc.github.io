@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { Grid, Typography } from "@mui/material";
+import { css, Grid, Typography } from "@mui/material";
 import React from "react";
 import { ContentContainer } from "../../util";
 import Headshot from "./bree-headshot.jpg";
-import { css } from "@emotion/react";
 import { aboutTechnologiesText, aboutText, myTechnologies } from "./aboutMeText";
 import { DevTechnologyButton } from "../../util/DevTechnologyButton";
 
@@ -28,7 +27,7 @@ export const AboutMe: React.FC = () => {
     <ContentContainer title={title}>
       <Grid container wrap="nowrap" spacing={4} justifyContent="space-between" direction="row-reverse">
         <Grid item>
-          <img css={imgStyle} src={Headshot} />
+          <img alt="my-headshot" css={imgStyle} src={Headshot} />
         </Grid>
         <Grid item>
           <Grid container spacing={2} direction="column" justifyContent="space-around">

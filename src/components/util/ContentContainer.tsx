@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
-import { Grid, Typography } from "@mui/material";
+import { css, Grid, GridProps, Typography } from "@mui/material";
 import React from "react";
-import { css } from "@emotion/react";
 
 interface ContentContainerProps {
   children: React.ReactNode;
+  gridProps?: GridProps;
 }
 
 const containerStyle = css({
@@ -15,13 +15,14 @@ const containerStyle = css({
   - include title component
   - will have children
   - style with a decent enough spacing around the content
+  - rename to GridContainer?? idk.
 */
 
 export const ContentContainer: React.FC<ContentContainerProps & {
   title?: string;
-}> = ({ title, children }) => {
+}> = ({ title, children, gridProps }) => {
   return (
-    <Grid container css={containerStyle} spacing={2}>
+    <Grid container css={containerStyle} spacing={2} {...gridProps}>
       {title &&
         <Grid item>
           <Typography variant="h6">

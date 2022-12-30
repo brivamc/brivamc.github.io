@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
-import { Button } from "@mui/material";
+import { Button, css } from "@mui/material";
 import React from "react";
 import { TechnologyStack } from "../pages/about/aboutMeText";
-import { css } from "@emotion/react";
 
 const buttonStyle = css({
   textTransform: "none"

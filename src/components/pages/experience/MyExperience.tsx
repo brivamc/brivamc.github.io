@@ -9,7 +9,10 @@ import TabContext from "@mui/lab/TabContext";
 import { formatDate } from "../../util/formatDate";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-/* TODO: CREATE REUSABLE COMPONENTS */
+/* TODO: CREATE REUSABLE COMPONENTS
+    - component for tabs (implement mobile friendly as well (isMobile?)!!)
+    - component for list (possibly need mobile friendly version?)
+*/
 
 const tabsStyle = css({
   "& .MuiTab-wrapped": {
