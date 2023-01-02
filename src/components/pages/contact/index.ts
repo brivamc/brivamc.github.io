@@ -5,7 +5,7 @@ export const contactPage: Page = {
   props: [
     {
       component: ContactMe,
-      route: "/contact",
+      tag: "contact",
       title: "Contact Me"
     }
   ]

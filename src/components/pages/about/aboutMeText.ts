@@ -1,6 +1,5 @@
 export const aboutText = 
-`
-Hi! My name is Bree, and I enjoy creating and building websites and web applications. I was first interested in programming in 2013 when my friends and I would create small games and programs for fun. That, coupled with my interest in editing custom CSS and HTML themes on MySpace, Tumblr, and IMVU, eventually evolved into developing websites and applications on the web. Since I was six years old, I've been intrigued by computers, and my passion for them has only grown stronger.
+`Hi! My name is Bree, and I enjoy creating and building websites and web applications. I was first interested in programming in 2013 when my friends and I would create small games and programs for fun. That, coupled with my interest in editing custom CSS and HTML themes on MySpace, Tumblr, and IMVU, eventually evolved into developing websites and applications on the web. Since I was six years old, I've been intrigued by computers, and my passion for them has only grown stronger.
 
 Recently, I've had the privilege of working at an RV trip planning service, a website and IT company, and a cybersecurity start-up. Now, I'm seeking new challenges and exploring new opportunities in my career!
 

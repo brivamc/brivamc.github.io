@@ -2,7 +2,7 @@ import React from "react";
 
 export interface PageDefinition {
   component: React.FC;
-  route: string;
+  tag: string;
   title?: string;
 }
 

@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
-import { css, Grid, GridProps, Typography } from "@mui/material";
+import { css, Grid, GridProps } from "@mui/material";
 import React from "react";
+import { TitleHeader } from "./TitleHeader";
 
 interface ContentContainerProps {
   children: React.ReactNode;
@@ -8,7 +9,10 @@ interface ContentContainerProps {
 }
 
 const containerStyle = css({
-  padding: "10%"
+  paddingTop: "10%",
+  paddingBottom: "5%",
+  paddingLeft: "20%",
+  paddingRight: "20%"
 });
 
 /* TODO:
@@ -22,12 +26,10 @@ export const ContentContainer: React.FC<ContentContainerProps & {
   title?: string;
 }> = ({ title, children, gridProps }) => {
   return (
-    <Grid container css={containerStyle} spacing={2} {...gridProps}>
+    <Grid container css={containerStyle} spacing={3} {...gridProps}>
       {title &&
         <Grid item>
-          <Typography variant="h6">
-            {title}
-          </Typography>
+          <TitleHeader title={title} />
         </Grid>}
       <Grid item>
         {children}

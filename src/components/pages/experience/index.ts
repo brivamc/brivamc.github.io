@@ -5,7 +5,7 @@ export const experiencePage: Page = {
   props: [
     {
       component: MyExperience,
-      route: "/experience",
+      tag: "experience",
       title: "My Experience"
     }
   ]

@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
-import { css, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React from "react";
 import { ContentContainer } from "../../util";
 import { MailToButton } from "../../util/MailToButton";
+import { css } from "@emotion/react";
 
 const CONTACT_SUBTITLE = "Reach Out!";
 const CONTACT_DESCRIPTION = `My inbox is open if you have any questions, suggestions, or just want to say hi!

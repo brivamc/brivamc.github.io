@@ -8,7 +8,7 @@ const MY_EMAIL = "brivamc@udel.edu";
 const buttonStyle = css({
   textTransform: "none",
   fontWeight: "600",
-  width: "6em",
+  width: "6.5em",
   height: "3em",
   fontSize: "30px"
 });

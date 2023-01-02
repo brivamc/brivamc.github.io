@@ -5,7 +5,7 @@ export const aboutPage: Page = {
   props: [
     {
       component: AboutMe,
-      route: "/about",
+      tag: "about",
       title: "About Me"
     }
   ]

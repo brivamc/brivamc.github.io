@@ -40,7 +40,7 @@ export const MyExperience: React.FC = () => {
   };
 
   return (
-    <ContentContainer>
+    <ContentContainer title="Places I've Worked">
       <TabContext value={selectedTab}>
         <Grid container wrap="nowrap">
           <Grid item>

@@ -42,7 +42,7 @@ export const AboutMe: React.FC = () => {
               </Typography>
             </Grid>
             <Grid item>
-              <Grid container spacing={1} css={techContainerStyle}>
+              <Grid container spacing={2} css={techContainerStyle}>
                 {myTechnologies.map(tech => (
                   <Grid key={tech.name} item>
                     <DevTechnologyButton tech={tech} />
