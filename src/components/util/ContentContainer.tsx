@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, Grid, GridProps } from "@mui/material";
 import React from "react";
-import { ContainerHeader } from "./ContainerHeader";
+import { ContainerHeader } from ".";
 
 interface ContentContainerProps {
   children: React.ReactNode;
