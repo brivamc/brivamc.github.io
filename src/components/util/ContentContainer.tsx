@@ -1,38 +1,39 @@
 /** @jsxImportSource @emotion/react */
 import { css, Grid, GridProps } from "@mui/material";
 import React from "react";
-import { TitleHeader } from "./TitleHeader";
+import { ContainerHeader } from "./ContainerHeader";
 
 interface ContentContainerProps {
   children: React.ReactNode;
-  gridProps?: GridProps;
 }
 
 const containerStyle = css({
   paddingTop: "10%",
-  paddingBottom: "5%",
-  paddingLeft: "20%",
-  paddingRight: "20%"
+  paddingBottom: "10%",
+  paddingLeft: "15%",
+  paddingRight: "15%"
 });
 
-/* TODO:
-  - include title component
-  - will have children
-  - style with a decent enough spacing around the content
-  - rename to GridContainer?? idk.
-*/
+const gridTitleStyle = css({
+  align: "left",
+  textAlign: "left"
+});
 
-export const ContentContainer: React.FC<ContentContainerProps & {
+export const ContentContainer: React.FC<GridProps & ContentContainerProps & {
   title?: string;
-}> = ({ title, children, gridProps }) => {
+}> = ({ title, children, ...rest }) => {
   return (
-    <Grid container css={containerStyle} spacing={3} {...gridProps}>
+    <Grid container alignItems="center" css={containerStyle} spacing={3} {...rest}>
       {title &&
-        <Grid item>
-          <TitleHeader title={title} />
+        <Grid css={gridTitleStyle} item>
+          <ContainerHeader title={title} />
         </Grid>}
       <Grid item>
-        {children}
+        <Grid justifyContent="center" container>
+          <Grid item>
+            {children}
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );

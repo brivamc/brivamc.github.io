@@ -1,10 +1,9 @@
 /** @jsxImportSource @emotion/react */
-import { Grid, List, ListItem, ListItemIcon, ListItemText, Tab, Tabs, Typography } from "@mui/material";
+import { css, Grid, List, ListItem, ListItemIcon, ListItemText, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { ContentContainer } from "../../util";
+import { ContentContainer, ExperienceHeader } from "../../util";
 import { MyJobExperience, myJobExperiences } from "./experienceText";
 import { TabPanel } from "@mui/lab";
-import { css } from "@emotion/react";
 import TabContext from "@mui/lab/TabContext";
 import { formatDate } from "../../util/formatDate";
 import { MdKeyboardArrowRight } from "react-icons/md";
@@ -32,6 +31,11 @@ const tabPanelStyle = css({
   paddingTop: 0
 });
 
+const textStyle = css({
+  fontSize: "14px",
+  textTransform: "none"
+});
+
 export const MyExperience: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState<MyJobExperience["employer"]>(myJobExperiences[0].employer);
 
@@ -56,7 +60,7 @@ export const MyExperience: React.FC = () => {
                   key={job.index}
                   value={job.employer}
                   label={
-                    <Typography>
+                    <Typography css={textStyle} variant="overline">
                       {job.employer}
                     </Typography>
                   }
@@ -71,9 +75,7 @@ export const MyExperience: React.FC = () => {
               <TabPanel css={tabPanelStyle} key={job.index} value={job.employer}>
                 <Grid container>
                   <Grid item>
-                    <Typography>
-                      {`${job.jobTitle} @ ${job.employer}`}
-                    </Typography>
+                    <ExperienceHeader jobTitle={job.jobTitle} employer={job.employer} />
                     <Typography variant="caption">
                       {`${formatDate(job.startDate)} - ${job.endDate ? formatDate(job.endDate) : "Present"}`}
                     </Typography>
@@ -85,7 +87,7 @@ export const MyExperience: React.FC = () => {
                           <ListItemIcon>
                             <MdKeyboardArrowRight />
                           </ListItemIcon>
-                          <ListItemText>
+                          <ListItemText >
                             {jd}
                           </ListItemText>
                         </ListItem>

@@ -6,7 +6,7 @@ import { Layout } from './components/layout/Layout';
 
 export const App: React.FC = () => {
   const pages = _.flatten(Object.values(allPages).map(p => p.props ?? []));
-  const pageOrder = ["about", "experience", "projects", "contact"];
+  const pageOrder = ["main", "about", "experience", "projects", "contact"];
   const sortedPages = _.sortBy(pages, (p) => pageOrder.indexOf(p.tag));
 
   return (

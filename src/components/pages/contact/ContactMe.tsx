@@ -2,7 +2,7 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
 import { ContentContainer } from "../../util";
-import { MailToButton } from "../../util/MailToButton";
+import { MailToButton } from "../../util/buttons";
 import { css } from "@emotion/react";
 
 const CONTACT_SUBTITLE = "Reach Out!";
@@ -19,14 +19,10 @@ const textStyle = css({
 
 export const ContactMe: React.FC = () => {
   return (
-    <ContentContainer gridProps={{
-      container: true,
-      justifyContent: "center",
-      alignItems: "center"
-    }}>
-      <Grid css={gridStyle} container direction="column" spacing={4} justifyContent="center" alignItems="center">
+    <ContentContainer container justifyContent="center" alignItems="center">
+      <Grid css={gridStyle} container direction="column" spacing={4 } justifyContent="center" alignItems="center">
         <Grid item>
-          <Typography variant="h2">
+          <Typography fontWeight={600} variant="h2">
             {CONTACT_SUBTITLE}
           </Typography>
         </Grid>

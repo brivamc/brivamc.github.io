@@ -1,12 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { Button, css } from "@mui/material";
 import React from "react";
-
-/* TODO: put in another file? */
-const MY_EMAIL = "brivamc@udel.edu";
+import { url } from "../text";
 
 const buttonStyle = css({
-  textTransform: "none",
   fontWeight: "600",
   width: "6.5em",
   height: "3em",
@@ -18,7 +15,7 @@ export const MailToButton: React.FC = () => {
     <Button
       css={buttonStyle}
       target="_top"
-      href={`mailto:${MY_EMAIL}`}
+      href={`mailto:${url.my.email}`}
       rel="noopener noreferrer"
       variant="contained"
       disableElevation
