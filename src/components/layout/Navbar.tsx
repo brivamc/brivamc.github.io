@@ -1,17 +1,16 @@
 /** @jsxImportSource @emotion/react */
-import React, { useState } from "react"
+import React from "react"
 import Logo from "../util/images/my-logo.png";
-import { AppBar, css, Fade, Grid, PaletteMode, Toolbar } from "@mui/material";
-import { NavButton } from "../util/buttons/NavButton";
-import { DownloadResumeButton } from "../util/buttons/DownloadResumeButton";
-import { LightDarkThemeButton } from "../util/buttons/LightDarkThemeButton";
+import { AppBar, css, Fade, Grid, PaletteMode, Toolbar, useMediaQuery, useTheme } from "@mui/material";
+import { NavButtons } from "../util";
+import { NavbarMenu } from "./NavbarMenu";
 
 const logoStyle = css({
   length: "50px",
   width: "50px"
 });
 
-interface ButtonNav {
+export interface ButtonNav {
   label: string;
   url: string;
 }
@@ -35,20 +34,16 @@ const navButtons: ButtonNav[] = [
   }
 ];
 
-/*
+/* TODO:
 - add classnames to elements (navbar-container, navbar-logo, nav-links, nav-menu, nav-menu-active, nav-item, etc)
-- nav button component for about me, experience, projects, and contact (possibly resume too but idk, might be its own)
 */
 
 export const Navbar: React.FC<{
   mode: PaletteMode;
   onModeClick: () => void;
 }> = ({ mode, onModeClick }) => {
-  const [selected, setSelected] = useState("");
-
-  const handleClick = (selectedHash: string) => {
-    setSelected(selectedHash);
-  };
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.between("xs", "sm"));
   
   return (
     <>
@@ -57,26 +52,18 @@ export const Navbar: React.FC<{
           <Grid justifyContent="space-between" alignItems="center" container>
             <Grid item>
               <a href="/">
-                <img alt="my-headshot" css={logoStyle} src={Logo} />
+                <img alt="my-logo" css={logoStyle} src={Logo} />
               </a>
             </Grid>
             <Grid item>
               <Fade in timeout={1000}>
-                <Grid container spacing={1}>
-                  {navButtons.map(({ label, url }) =>
-                    <Grid key={label} item>
-                      <NavButton isSelected={selected === url} onClick={() => handleClick(url)} url={url}>
-                        {label}
-                      </NavButton>
-                    </Grid>
-                  )}
-                  <Grid item>
-                    <DownloadResumeButton />
-                  </Grid>
-                  <Grid item>
-                    <LightDarkThemeButton mode={mode} onClick={onModeClick} />
-                  </Grid>
-                </Grid>
+                {isMobile ?
+                <Grid>
+                  <NavbarMenu mode={mode} onModeClick={onModeClick} navButtons={navButtons} />
+                </Grid> :
+                <Grid>
+                  <NavButtons mode={mode} onModeClick={onModeClick} navButtons={navButtons} />
+                </Grid>}
               </Fade>
             </Grid>
           </Grid>

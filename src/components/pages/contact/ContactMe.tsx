@@ -10,7 +10,7 @@ const CONTACT_DESCRIPTION = `My inbox is open if you have any questions, suggest
 I'll try to get back to you in a timely manner :)`;
 
 const gridStyle = css({
-  width: "45vw"
+  paddingTop: "20%"
 });
 
 const textStyle = css({
@@ -20,9 +20,9 @@ const textStyle = css({
 export const ContactMe: React.FC = () => {
   return (
     <ContentContainer container justifyContent="center" alignItems="center">
-      <Grid css={gridStyle} container direction="column" spacing={4 } justifyContent="center" alignItems="center">
+      <Grid css={gridStyle} container direction="column" spacing={4} justifyContent="center" alignItems="center">
         <Grid item>
-          <Typography fontWeight={600} variant="h2">
+          <Typography align="center" fontWeight={600} variant="h2">
             {CONTACT_SUBTITLE}
           </Typography>
         </Grid>

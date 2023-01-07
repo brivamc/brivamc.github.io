@@ -5,7 +5,7 @@ import MyResume from "../documents/bmccausland-resume-for-site.pdf";
 const RESUME_NAME = "bree-mccausland-resume.pdf";
 
 export const DownloadResumeButton: React.FC = () => {
-  const handleButtonClick = () => {
+  const handleClick = () => {
     const link = document.createElement("a");
     link.download = RESUME_NAME;
     link.href = MyResume;
@@ -13,7 +13,7 @@ export const DownloadResumeButton: React.FC = () => {
   };
 
   return (
-    <Button onClick={handleButtonClick} variant="contained">
+    <Button onClick={handleClick} variant="contained">
       Resume
     </Button>
   );

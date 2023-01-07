@@ -54,13 +54,12 @@ export const lightThemePalette = {
   secondary: {
     main: themePalette.gray[500]
   },
-  divider: themePalette.pink[500],
   background: {
-    default: themePalette.gray[100],
-    paper: themePalette.gray[100]
+    default: themePalette.pink[200],
+    paper: themePalette.pink[200]
   },
   text: {
-    primary: themePalette.gray[700],
+    primary: themePalette.gray[600],
     secondary: themePalette.gray[900],
   }
 };
@@ -72,7 +71,6 @@ export const darkThemePalette = {
   secondary: {
     main: themePalette.primary[200]
   },
-  divider: themePalette.primary[500],
   background: {
     default: themePalette.gray[900],
     paper: themePalette.gray[900]
@@ -110,7 +108,7 @@ export const getThemedComponents = (mode: PaletteMode) => ({
         contained: {
           color: mode === "light" ? lightThemePalette.background.default : darkThemePalette.background.default,
           "&:hover": {
-            backgroundColor: mode === "light" ? themePalette.pink[600] : themePalette.primary[300]
+            backgroundColor: mode === "light" ? themePalette.pink[500] : themePalette.primary[300]
           }
         },
         text: {
@@ -125,11 +123,17 @@ export const getThemedComponents = (mode: PaletteMode) => ({
         disableElevation: true
       }
     },
+    MuiListItemIcon: {
+      styleOverrides: {
+        root: {
+          minWidth: "40px"
+        }
+      }
+    },
     MuiIconButton: {
       styleOverrides: {
         root: {
           "&:hover": {
-            background: "transparent",
             color: mode === "light" ? lightThemePalette.secondary.main : darkThemePalette.secondary.main,
           }
         },
@@ -151,3 +155,12 @@ export const getThemedComponents = (mode: PaletteMode) => ({
     }
   }
 });
+
+
+/*
+TODO
+.MuiTabs-scrollButtons.Mui-disabled {
+  opacity: 0.3;
+}
+
+*/

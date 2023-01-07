@@ -23,7 +23,7 @@ export const MyProjects: React.FC = () => {
     >
       <Grid container direction="column" justifyContent="center" alignItems="center" spacing={4}>
         <Grid item>
-          <Typography variant="h6">
+          <Typography align="center" variant="h6">
             {MY_PROJECTS_TEXT}
           </Typography>
         </Grid>

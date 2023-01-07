@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface MyJobExperience {
   index: number;
   jobTitle: string;
