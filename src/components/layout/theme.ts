@@ -155,12 +155,3 @@ export const getThemedComponents = (mode: PaletteMode) => ({
     }
   }
 });
-
-
-/*
-TODO
-.MuiTabs-scrollButtons.Mui-disabled {
-  opacity: 0.3;
-}
-
-*/

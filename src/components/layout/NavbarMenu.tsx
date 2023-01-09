@@ -2,7 +2,7 @@
 import { css, Divider, Drawer, Grid, IconButton, List, ListItem, ListItemButton, ListItemText, PaletteMode } from "@mui/material";
 import React, { useState } from "react";
 import { ButtonNav } from ".";
-import { DownloadResumeListItem, LightDarkModeListItem } from "../util/list";
+import { DownloadResumeListItem, LightDarkModeListItem } from "../list";
 import { MdClose } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 

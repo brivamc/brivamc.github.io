@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import React from "react"
-import Logo from "../util/images/my-logo.png";
-import { AppBar, css, Fade, Grid, PaletteMode, Toolbar, useMediaQuery, useTheme } from "@mui/material";
-import { NavButtons } from "../util";
+import Logo from "../../assets/images/my-logo.png";
+import { AppBar, css, Fade, Grid, PaletteMode, Toolbar } from "@mui/material";
 import { NavbarMenu } from "./NavbarMenu";
+import { NavButtons } from "../buttons";
 
 const logoStyle = css({
   length: "50px",
@@ -34,17 +34,11 @@ const navButtons: ButtonNav[] = [
   }
 ];
 
-/* TODO:
-- add classnames to elements (navbar-container, navbar-logo, nav-links, nav-menu, nav-menu-active, nav-item, etc)
-*/
-
 export const Navbar: React.FC<{
+  isMobile?: boolean;
   mode: PaletteMode;
   onModeClick: () => void;
-}> = ({ mode, onModeClick }) => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.between("xs", "sm"));
-  
+}> = ({ isMobile = false, mode, onModeClick }) => {
   return (
     <>
       <AppBar color="inherit" elevation={0} enableColorOnDark>
