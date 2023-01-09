@@ -2,7 +2,6 @@
 import { css, Grid, IconButton, List, ListItem, ListItemIcon, ListItemText, Tab, Tabs, tabsClasses, Typography } from "@mui/material";
 import React, { useRef, useState } from "react";
 import { ExperienceHeader } from "./ExperienceHeader";
-import { FiMenu } from "react-icons/fi";
 import { MyJobExperience } from "./experienceText";
 import { MdNavigateNext, MdNavigateBefore, MdKeyboardArrowRight } from "react-icons/md";
 import _ from "lodash";

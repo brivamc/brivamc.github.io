@@ -90,6 +90,9 @@ export const getDesignTokens = (mode: PaletteMode) => ({
 
 export const getThemedComponents = (mode: PaletteMode) => ({
   palette: themePalette,
+  typography: {
+    fontFamily: "Raleway"
+  },
   components: {
     MuiButton: {
       styleOverrides: {

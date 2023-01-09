@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { AppBar, css, Grid, Toolbar } from "@mui/material";
+import { AppBar, css, Toolbar } from "@mui/material";
 import React from "react";
 import { SocialButtons } from "../buttons";
 
