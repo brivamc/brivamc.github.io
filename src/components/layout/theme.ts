@@ -49,14 +49,14 @@ export const themePalette = {
 
 export const lightThemePalette = {
   primary: {
-    main: themePalette.pink[600]
+    main: themePalette.green[500]
   },
   secondary: {
     main: themePalette.gray[500]
   },
   background: {
-    default: themePalette.pink[200],
-    paper: themePalette.pink[200]
+    default: themePalette.gray[100],
+    paper: themePalette.gray[100]
   },
   text: {
     primary: themePalette.gray[600],
@@ -91,13 +91,13 @@ export const getDesignTokens = (mode: PaletteMode) => ({
 export const getThemedComponents = (mode: PaletteMode) => ({
   palette: themePalette,
   typography: {
-    fontFamily: "Raleway"
+    fontFamily: "Raleway",
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          fontSize: "1rem",
+          fontSize: "1.1rem",
           fontWeight: 600,
           borderRadius: "8px",
           textTransform: "none" as const
@@ -111,12 +111,12 @@ export const getThemedComponents = (mode: PaletteMode) => ({
         contained: {
           color: mode === "light" ? lightThemePalette.background.default : darkThemePalette.background.default,
           "&:hover": {
-            backgroundColor: mode === "light" ? themePalette.pink[500] : themePalette.primary[300]
+            backgroundColor: mode === "light" ? themePalette.green[300] : themePalette.primary[300]
           }
         },
         text: {
           "&:hover": {
-            color: mode === "light" ? lightThemePalette.secondary.main : darkThemePalette.secondary.main,
+            color: mode === "light" ? themePalette.green[300] : themePalette.primary[300],
             background: "transparent"
           }
         }
@@ -136,14 +136,18 @@ export const getThemedComponents = (mode: PaletteMode) => ({
     MuiIconButton: {
       styleOverrides: {
         root: {
+          borderRadius: 0,
           "&:hover": {
-            color: mode === "light" ? lightThemePalette.secondary.main : darkThemePalette.secondary.main,
+            color: mode === "light" ? themePalette.green[300] : themePalette.primary[300],
           }
-        },
+        }
       }
     },
     MuiTypography: {
       styleOverrides: {
+        body1: {
+          fontSize: "1.1rem"
+        },
         h4: {
           ...mode === "light" ? {
             color: lightThemePalette.secondary.main

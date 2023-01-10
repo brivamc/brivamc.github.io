@@ -22,7 +22,7 @@ export interface TechURLs {
   yarn: string;
   npm: string;
   git: string;
-  go: string;
+  golang: string;
   postgresql: string;
   graphql: string;
 }
@@ -56,7 +56,7 @@ export const urls: AllURLs = {
     yarn: "https://yarnpkg.com/",
     npm: "https://www.npmjs.com/",
     git: "https://git-scm.com/",
-    go: "https://go.dev/",
+    golang: "https://go.dev/",
     postgresql: "https://www.postgresql.org/",
     graphql: "https://graphql.org/"
   }

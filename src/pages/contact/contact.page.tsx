@@ -30,7 +30,7 @@ export const ContactPage: React.FC<PortfolioPageProps> = ({
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="h6" align="center" css={textStyle}>
+          <Typography variant="h5" align="center" css={textStyle}>
             {CONTACT_DESCRIPTION}
           </Typography>
         </Grid>

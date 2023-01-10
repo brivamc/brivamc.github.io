@@ -3,7 +3,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { MyJobExperience } from "./experienceText";
 import { ClickAwayListener, Grow, MenuList, Paper, Popper } from "@mui/material";
 import _ from "lodash";
-import { themePalette } from "../../components/layout/theme";
+import { darkThemePalette, lightThemePalette } from "../../components/layout/theme";
 
 export const ExperienceMenu: React.FC<{
   anchorEl: React.RefObject<HTMLButtonElement>;
@@ -37,6 +37,9 @@ export const ExperienceMenu: React.FC<{
       placement="bottom"
       anchorEl={anchorEl?.current}
       transition
+      sx={{
+        paddingTop: ".5%"
+      }}
     >
       {({ TransitionProps }) => (
         <Grow
@@ -45,7 +48,8 @@ export const ExperienceMenu: React.FC<{
           <Paper
             sx={[
               (theme) => ({
-                backgroundColor: theme.palette.mode === "light" ? themePalette.pink[300] : themePalette.gray[800]
+                backgroundColor: theme.palette.mode === "light" ? lightThemePalette.secondary : darkThemePalette.secondary,
+                border: theme.palette.mode === "light" ? `2px ${lightThemePalette.primary.main} solid` : `2px ${darkThemePalette.primary.main} solid` 
               })
             ]}
             elevation={0}

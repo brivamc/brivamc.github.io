@@ -30,7 +30,7 @@ const mobileTechContainerStyle = css({
   maxWidth: "100vw"
 });
 
-const makeHyperlink = (text: string, link: string) => (<Link css={linkStyle} underline="hover" href={link} rel="noopener noreferrer" target="_blank">{text}</Link>);
+const makeHyperlink = (text: string, link: string) => (<Link aria-label="my experience" css={linkStyle} underline="hover" href={link} rel="noopener noreferrer" target="_blank">{text}</Link>);
 
 export const AboutPage: React.FC<PortfolioPageProps> = ({
   isMobile

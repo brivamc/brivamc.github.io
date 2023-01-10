@@ -17,6 +17,7 @@ export const NavButton: React.FC<NavButtonProps & ButtonProps & {
 
   return (
     <Button
+      aria-label="navigation button"
       href={url}
       color={isSelected ? "secondary" : "primary"}
       css={buttonStyle}

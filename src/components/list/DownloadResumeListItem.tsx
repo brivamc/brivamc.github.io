@@ -15,7 +15,7 @@ export const DownloadResumeListItem: React.FC = () => {
 
   return (
     <ListItem>
-      <ListItemButton onClick={handleClick}>
+      <ListItemButton aria-label="download resume" onClick={handleClick}>
         <ListItemIcon>
           <FiDownload />
         </ListItemIcon>

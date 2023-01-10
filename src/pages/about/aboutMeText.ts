@@ -18,7 +18,7 @@ export const myTechnologies: TechnologyStack[] = [
   {name: "Yarn", url: techUrls.yarn},
   {name: "npm", url: techUrls.npm},
   {name: "Git", url: techUrls.git},
-  {name: "Go", url: techUrls.go},
+  {name: "Golang", url: techUrls.golang},
   {name: "PostgreSQL", url: techUrls.postgresql},
   {name: "GraphQL", url: techUrls.graphql}  
 ];

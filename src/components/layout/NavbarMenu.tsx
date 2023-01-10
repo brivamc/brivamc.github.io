@@ -33,7 +33,7 @@ export const NavbarMenu: React.FC<{
 
   return (
     <>
-      <IconButton onClick={handleDrawerClick}>
+      <IconButton aria-label="open nav drawer" onClick={handleDrawerClick}>
         <FiMenu />
       </IconButton>
       <Drawer
@@ -45,13 +45,13 @@ export const NavbarMenu: React.FC<{
           <Grid item>
             <List>
               <ListItem disablePadding css={closeButtonStyle}>
-                <IconButton onClick={handleDrawerClose}>
+                <IconButton aria-label="close nav drawer" onClick={handleDrawerClose}>
                   <MdClose />
                 </IconButton>
               </ListItem>
               {navButtons.map(({ label, url }) =>
                 <ListItem key={label}>
-                  <ListItemButton onClick={handleDrawerClose} href={url}>
+                  <ListItemButton aria-label={`nav button ${label}`} onClick={handleDrawerClose} href={url}>
                     <ListItemText primary={label} />
                   </ListItemButton>
                 </ListItem>

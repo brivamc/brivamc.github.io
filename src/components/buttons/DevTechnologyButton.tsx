@@ -12,6 +12,7 @@ export const DevTechnologyButton: React.FC<{
 }> = ({ tech }) => {
   return (
     <Button
+      aria-label="my tech stack"
       href={tech.url}
       css={buttonStyle}
       variant="outlined"

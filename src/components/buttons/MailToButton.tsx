@@ -13,6 +13,7 @@ const buttonStyle = css({
 export const MailToButton: React.FC = () => {
   return (
     <Button
+      aria-label="contact me"
       css={buttonStyle}
       target="_top"
       href={`mailto:${urls.my.email}`}

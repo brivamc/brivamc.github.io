@@ -27,7 +27,7 @@ export const ProjectsPage: React.FC<PortfolioPageProps> = ({
     >
       <Grid container direction="column" justifyContent="center" alignItems="center" spacing={4}>
         <Grid item>
-          <Typography align="center" variant="h6">
+          <Typography align="center" variant="h5">
             {MY_PROJECTS_TEXT}
           </Typography>
         </Grid>
@@ -37,6 +37,7 @@ export const ProjectsPage: React.FC<PortfolioPageProps> = ({
             <FiExternalLink size={25} />
           }
           css={buttonStyle}
+          aria-label="view my projects"
           target="_blank"
           rel="noopener noreferrer"
           href={urls.my.github.repo}

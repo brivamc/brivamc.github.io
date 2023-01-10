@@ -16,10 +16,10 @@ const MY_LAST_NAME = "McCausland";
 
 const aboutMeList = [
   "full-stack developer 💻",
-  "dreamer ☁️",
-  "video game enthusiast 🎮",
   "lover of all things tech 📱",
-  "cat lover 🐈"
+  "video game enthusiast 🎮",
+  "cat lover 🐈",
+  "dreamer ☁️"
 ];
 
 const textStyle = css({
@@ -38,16 +38,24 @@ const mobileAboutTextStyle = css({
   fontSize: "20px"
 });
 
-const nameTextStyle = css({
-  fontSize: "130px"
+const xlNameTextStyle = css({
+  fontSize: "10rem"
+});
+
+const lgNameTextStyle = css({
+  fontSize: "8rem"
 });
 
 const mdNameTextStyle = css({
-  fontSize: "100px"
+  fontSize: "6rem"
 });
 
-const mobileNameTextStyle = css({
-  fontSize: "70px"
+const smNameTextStyle = css({
+  fontSize: "3.5rem"
+});
+
+const xsNameTextStyle = css({
+  fontSize: "2rem"
 });
 
 const gridStyle = css({
@@ -60,7 +68,7 @@ const containerMdStyle = css({
 });
 
 const containerMobileStyle = css({
-  marginTop: "15%",
+  marginTop: "10%",
   marginBottom: "30%"
 });
 
@@ -94,11 +102,13 @@ export const IntroPage: React.FC<PortfolioPageProps> = ({
         <Slide in direction="down" container={containerRef.current} timeout={1000}>
           <Grid item>
             <Typography
-              css={isMobile && mobileNameTextStyle}
               sx={[
                 (theme) => ({
+                  [theme.breakpoints.only("xs")]: xsNameTextStyle,
+                  [theme.breakpoints.between("xs", "sm")]: smNameTextStyle,
                   [theme.breakpoints.between("sm", "md")]: mdNameTextStyle,
-                  [theme.breakpoints.up("md")]: nameTextStyle
+                  [theme.breakpoints.between("md", "lg")]: lgNameTextStyle,
+                  [theme.breakpoints.up("lg")]: xlNameTextStyle,
                 })
               ]}
               color="primary"
@@ -112,11 +122,13 @@ export const IntroPage: React.FC<PortfolioPageProps> = ({
         <Slide in direction="down" container={containerRef.current} timeout={1000}>
           <Grid item>
             <Typography
-              css={isMobile && mobileNameTextStyle}
               sx={[
                 (theme) => ({
+                  [theme.breakpoints.only("xs")]: xsNameTextStyle,
+                  [theme.breakpoints.between("xs", "sm")]: smNameTextStyle,
                   [theme.breakpoints.between("sm", "md")]: mdNameTextStyle,
-                  [theme.breakpoints.up("md")]: nameTextStyle
+                  [theme.breakpoints.between("md", "lg")]: lgNameTextStyle,
+                  [theme.breakpoints.up("lg")]: xlNameTextStyle,
                 })
               ]}
               color="secondary"

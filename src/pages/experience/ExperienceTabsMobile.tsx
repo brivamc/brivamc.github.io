@@ -22,8 +22,7 @@ const tabsStyle = css({
   '& .MuiTabs-indicator': {
     display: "none"
   },
-  minWidth: "20vw",
-  height: "100%"
+  minWidth: "20vw"
 });
 
 const tabPanelStyle = css({
@@ -110,12 +109,12 @@ export const ExperienceTabsMobile: React.FC<{
               };
               if (props.direction === "left") {
                 return (
-                  <IconButton onClick={handlePrevClick} disabled={!isPrevClickable}>
+                  <IconButton aria-label="go to previous experience" onClick={handlePrevClick} disabled={!isPrevClickable}>
                     <MdNavigateBefore />
                   </IconButton>);
               } else if (props.direction === "right") {
                 return (
-                  <IconButton onClick={handleNextClick} disabled={!isNextClickable}>
+                  <IconButton aria-label="go to next experience" onClick={handleNextClick} disabled={!isNextClickable}>
                     <MdNavigateNext />
                   </IconButton>);
               } else {

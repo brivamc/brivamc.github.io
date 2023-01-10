@@ -13,7 +13,7 @@ export const LightDarkThemeButton: React.FC<ButtonProps & {
   mode: PaletteMode;
 }> = ({ mode, ...rest }) => {
   return (
-    <IconButton css={buttonStyle} color="primary" {...rest}>
+    <IconButton aria-label="change theme mode" css={buttonStyle} color="primary" {...rest}>
       {mode === "dark" ? <MdOutlineDarkMode /> : <MdLightMode />}
     </IconButton>
   );

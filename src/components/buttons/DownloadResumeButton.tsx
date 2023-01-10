@@ -13,7 +13,7 @@ export const DownloadResumeButton: React.FC = () => {
   };
 
   return (
-    <Button onClick={handleClick} variant="contained">
+    <Button aria-label="download resume" onClick={handleClick} variant="contained">
       Resume
     </Button>
   );

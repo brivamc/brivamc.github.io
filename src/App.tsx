@@ -10,7 +10,7 @@ export const App: React.FC = () => {
   const pageOrder = ["main", "about", "experience", "projects", "contact"];
   const sortedPages = _.sortBy(pages, (p) => pageOrder.indexOf(p.tag));
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.between("xs", "md"));
+  const isMobile = useMediaQuery(theme.breakpoints.between("xs", "lg"));
 
   return (
       <Layout isMobile={isMobile}>

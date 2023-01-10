@@ -8,7 +8,7 @@ export const LightDarkModeListItem: React.FC<ListItemButtonProps & {
 }> = ({ mode, ...rest }) => {
   return (
     <ListItem>
-      <ListItemButton {...rest}>
+      <ListItemButton aria-label="change theme mode" {...rest}>
         <ListItemIcon>
           {mode === "dark" ? <MdOutlineDarkMode /> : <MdLightMode />}
         </ListItemIcon>

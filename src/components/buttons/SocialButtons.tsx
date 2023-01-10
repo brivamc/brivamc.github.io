@@ -44,6 +44,7 @@ export const SocialButtons: React.FC<{
       {socialButtons.map(({ name, icon: Icon, url }) =>
         <Grid item key={name}>
           <IconButton
+            aria-label={`click to go to my ${name}`}
             css={[buttonStyle, size === "large" && iconStyle]}
             color="primary"
             href={url}
