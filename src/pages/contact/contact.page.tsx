@@ -1,9 +1,10 @@
 /** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import { Grid, Typography } from "@mui/material";
 import React from "react";
-import { ContentContainer } from "../../components/util";
+
 import { MailToButton } from "../../components/buttons";
-import { css } from "@emotion/react";
+import { ContentContainer } from "../../components/util";
 import { PortfolioPageProps } from "../../types/pages";
 
 const CONTACT_SUBTITLE = "Contact Me!";
@@ -19,7 +20,7 @@ const textStyle = css({
 });
 
 export const ContactPage: React.FC<PortfolioPageProps> = ({
-  isMobile
+  isMobile = false
 }) => {
   return (
     <ContentContainer isMobile={isMobile} container justifyContent="center" alignItems="center">
@@ -40,4 +41,4 @@ export const ContactPage: React.FC<PortfolioPageProps> = ({
       </Grid>
     </ContentContainer>
   );
-}
+};

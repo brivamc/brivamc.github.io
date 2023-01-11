@@ -1,13 +1,15 @@
 /** @jsxImportSource @emotion/react */
-import React from "react"
-import Logo from "../../assets/images/my-logo.png";
 import { AppBar, css, Fade, Grid, PaletteMode, Toolbar } from "@mui/material";
-import { NavbarMenu } from "./NavbarMenu";
+import React from "react";
+
+import LogoLight from "../../assets/images/my-logo-light.png";
+import LogoDark from "../../assets/images/my-logo-dark.png";
 import { NavButtons } from "../buttons";
+import { NavbarMenu } from "./NavbarMenu";
 
 const logoStyle = css({
-  length: "50px",
-  width: "50px"
+  length: "64px",
+  width: "64px"
 });
 
 export interface ButtonNav {
@@ -17,7 +19,7 @@ export interface ButtonNav {
 
 const navButtons: ButtonNav[] = [
   {
-    label: 'About Me',
+    label: "About Me",
     url: "/#about"
   },
   {
@@ -46,18 +48,18 @@ export const Navbar: React.FC<{
           <Grid justifyContent="space-between" alignItems="center" container>
             <Grid item>
               <a href="/">
-                <img alt="my-logo" css={logoStyle} src={Logo} />
+                <img alt="my-logo" css={logoStyle} src={mode === "light" ? LogoLight : LogoDark} />
               </a>
             </Grid>
             <Grid item>
               <Fade in timeout={1000}>
                 {isMobile ?
-                <Grid>
-                  <NavbarMenu mode={mode} onModeClick={onModeClick} navButtons={navButtons} />
-                </Grid> :
-                <Grid>
-                  <NavButtons mode={mode} onModeClick={onModeClick} navButtons={navButtons} />
-                </Grid>}
+                  <Grid>
+                    <NavbarMenu mode={mode} onModeClick={onModeClick} navButtons={navButtons} />
+                  </Grid> :
+                  <Grid>
+                    <NavButtons mode={mode} onModeClick={onModeClick} navButtons={navButtons} />
+                  </Grid>}
               </Fade>
             </Grid>
           </Grid>
@@ -66,4 +68,4 @@ export const Navbar: React.FC<{
       <Toolbar />
     </>
   );
-}
+};

@@ -9,4 +9,4 @@ export const projectsPage: Page = {
       title: "My Projects"
     }
   ]
-}
+};

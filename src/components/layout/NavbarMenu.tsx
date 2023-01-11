@@ -1,10 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css, Divider, Drawer, Grid, IconButton, List, ListItem, ListItemButton, ListItemText, PaletteMode } from "@mui/material";
 import React, { useState } from "react";
-import { ButtonNav } from ".";
-import { DownloadResumeListItem, LightDarkModeListItem } from "../list";
-import { MdClose } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
+import { MdClose } from "react-icons/md";
+
+import { DownloadResumeListItem, LightDarkModeListItem } from "../list";
+import { ButtonNav } from ".";
 
 const containerStyle = css({
   height: "100%"
@@ -24,12 +25,12 @@ export const NavbarMenu: React.FC<{
   const [open, setOpen] = useState(false);
 
   const handleDrawerClick = () => {
-    return setOpen(prev => !prev);
+    setOpen(prev => !prev);
   };
 
   const handleDrawerClose = () => {
-    return setOpen(false);
-  }
+    setOpen(false);
+  };
 
   return (
     <>
@@ -49,12 +50,13 @@ export const NavbarMenu: React.FC<{
                   <MdClose />
                 </IconButton>
               </ListItem>
-              {navButtons.map(({ label, url }) =>
+              {navButtons.map(({ label, url }) => (
                 <ListItem key={label}>
                   <ListItemButton aria-label={`nav button ${label}`} onClick={handleDrawerClose} href={url}>
                     <ListItemText primary={label} />
                   </ListItemButton>
                 </ListItem>
+              )
               )}
             </List>
           </Grid>
@@ -69,4 +71,4 @@ export const NavbarMenu: React.FC<{
       </Drawer>
     </>
   );
-}
+};

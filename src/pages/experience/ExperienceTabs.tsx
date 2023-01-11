@@ -1,13 +1,14 @@
 /** @jsxImportSource @emotion/react */
-import { css, Grid, List, ListItem, ListItemIcon, ListItemText, Tab, Tabs, Typography } from "@mui/material";
-import React from "react";
-import { MyJobExperience } from "./experienceText";
 import { TabPanel } from "@mui/lab";
 import TabContext from "@mui/lab/TabContext";
-import { formatDate } from "../../util/formatDate";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { css, Grid, List, ListItem, ListItemIcon, ListItemText, Tab, Tabs, Typography } from "@mui/material";
 import _ from "lodash";
+import React from "react";
+import { MdKeyboardArrowRight } from "react-icons/md";
+
+import { formatDate } from "../../util/formatDate";
 import { ExperienceHeader } from "./ExperienceHeader";
+import { MyJobExperience } from "./experienceText";
 
 const tabsStyle = css({
   "& .MuiTab-wrapped": {
@@ -16,7 +17,7 @@ const tabsStyle = css({
     textAlign: "left",
     textTransform: "none"
   },
-  '& .MuiTabs-indicator': {
+  "& .MuiTabs-indicator": {
     left: 0
   },
   minWidth: "20vw",
@@ -61,11 +62,9 @@ export const ExperienceTabs: React.FC<{
               <Tab
                 key={job.index}
                 value={job.employer}
-                label={
-                  <Typography css={textStyle}>
-                    {job.employer}
-                  </Typography>
-                }
+                label={<Typography css={textStyle}>
+                  {job.employer}
+                </Typography>}
                 disableRipple
                 wrapped
               />
@@ -103,4 +102,4 @@ export const ExperienceTabs: React.FC<{
       </Grid>
     </TabContext>
   );
-}
+};

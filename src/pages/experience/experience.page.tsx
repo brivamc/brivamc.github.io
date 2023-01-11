@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+
 import { ContentContainer } from "../../components/util";
-import { MyJobExperience, myJobExperiences } from "./experienceText";
+import { PortfolioPageProps } from "../../types/pages";
 import { ExperienceTabs } from "./ExperienceTabs";
 import { ExperienceTabsMobile } from "./ExperienceTabsMobile";
-import { PortfolioPageProps } from "../../types/pages";
+import { MyJobExperience, myJobExperiences } from "./experienceText";
 
 export const ExperiencePage: React.FC<PortfolioPageProps> = ({
-  isMobile
+  isMobile = false
 }) => {
   const [selectedTab, setSelectedTab] = useState<MyJobExperience>(myJobExperiences[0]);
 
@@ -18,11 +19,11 @@ export const ExperiencePage: React.FC<PortfolioPageProps> = ({
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
         /> :
-          <ExperienceTabs
-            jobExperiences={myJobExperiences}
-            selectedTab={selectedTab}
-            setSelectedTab={setSelectedTab}
-          />}
+        <ExperienceTabs
+          jobExperiences={myJobExperiences}
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+        />}
     </ContentContainer>
   );
-}
+};

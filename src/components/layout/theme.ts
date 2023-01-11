@@ -1,10 +1,10 @@
-import { PaletteMode } from "@mui/material";
+import { PaletteMode, ThemeOptions } from "@mui/material";
 
 export const themePalette = {
   green: {
     100: "#D0DDD9", // gainsboro
     200: "#C4D4CE", // ash gray
-    300: "#B8CCC5", // opal ** love **
+    300: "#B8CCC5", // opal
     400: "#89A99D", // morning blue
     500: "#71988A", // polished pine
     600: "#5E8275", // wintergreen dream
@@ -20,7 +20,7 @@ export const themePalette = {
     500: "#7A7A7A", // sonic silver
     600: "#666666", // granite gray
     700: "#3D3D3D", // onyx
-    800: "#333333", // jet ** love **
+    800: "#333333", // jet
     900: "#1F1F1F", // eerie black
   },
   primary: {
@@ -28,7 +28,7 @@ export const themePalette = {
     200: "#D0C5E8", // languid lavender
     300: "#B9A7DC", // wisteria
     400: "AD99D6",  // blue bell
-    500: "#A18AD0", // lavender floral ** love **
+    500: "#A18AD0", // lavender floral
     600: "#8C6DC5",  // middle blue purple
     700: "#6B46AF", // plump purple
     800: "#472F75", // spanish violet
@@ -39,7 +39,7 @@ export const themePalette = {
     200: "#F3E2F0", // pale purple pantone
     300: "#EED2E8", // pink lace
     400: "#E9C4E1", // thistle
-    500: "#E3B5D9", // pink lavender ** love **
+    500: "#E3B5D9", // pink lavender
     600: "#C97EBB", // sky magenta
     700: "#BD61AC", // pearly purple
     800: "#652A5B", // palatinate purple
@@ -49,7 +49,9 @@ export const themePalette = {
 
 export const lightThemePalette = {
   primary: {
-    main: themePalette.green[500]
+    main: themePalette.green[500],
+    dark: themePalette.green[700],
+    light: themePalette.green[300]
   },
   secondary: {
     main: themePalette.gray[500]
@@ -66,7 +68,9 @@ export const lightThemePalette = {
 
 export const darkThemePalette = {
   primary: {
-    main: themePalette.primary[500]
+    main: themePalette.primary[500],
+    dark: themePalette.primary[700],
+    light: themePalette.primary[200]
   },
   secondary: {
     main: themePalette.primary[200]
@@ -81,14 +85,14 @@ export const darkThemePalette = {
   }
 };
 
-export const getDesignTokens = (mode: PaletteMode) => ({
+export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
   palette: {
     mode,
     ...(mode === "light" ? lightThemePalette : darkThemePalette)
   }
 });
 
-export const getThemedComponents = (mode: PaletteMode) => ({
+export const getThemedComponents = (mode: PaletteMode): ThemeOptions => ({
   palette: themePalette,
   typography: {
     fontFamily: "Raleway",
@@ -111,12 +115,12 @@ export const getThemedComponents = (mode: PaletteMode) => ({
         contained: {
           color: mode === "light" ? lightThemePalette.background.default : darkThemePalette.background.default,
           "&:hover": {
-            backgroundColor: mode === "light" ? themePalette.green[300] : themePalette.primary[300]
+            backgroundColor: mode === "light" ? lightThemePalette.primary.light : darkThemePalette.primary.light
           }
         },
         text: {
           "&:hover": {
-            color: mode === "light" ? themePalette.green[300] : themePalette.primary[300],
+            color: mode === "light" ? lightThemePalette.primary.light : darkThemePalette.primary.light,
             background: "transparent"
           }
         }
@@ -138,7 +142,7 @@ export const getThemedComponents = (mode: PaletteMode) => ({
         root: {
           borderRadius: 0,
           "&:hover": {
-            color: mode === "light" ? themePalette.green[300] : themePalette.primary[300],
+            color: mode === "light" ? lightThemePalette.primary.light : darkThemePalette.primary.light,
           }
         }
       }

@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, Grid, GridProps } from "@mui/material";
 import React from "react";
+
 import { ContainerHeader } from ".";
 
 interface ContentContainerProps {
@@ -32,7 +33,7 @@ export const ContentContainer: React.FC<GridProps & ContentContainerProps & {
 }> = ({ title, isMobile = false, children, ...rest }) => {
   return (
     <Grid container alignItems="center" css={isMobile ? mobileContainerStyle : containerStyle} spacing={3} {...rest}>
-      {title &&
+      {title !== undefined &&
         <Grid css={gridTitleStyle} item>
           <ContainerHeader title={title} />
         </Grid>}
@@ -45,4 +46,4 @@ export const ContentContainer: React.FC<GridProps & ContentContainerProps & {
       </Grid>
     </Grid>
   );
-}
+};

@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { AppBar, css, Toolbar } from "@mui/material";
 import React from "react";
+
 import { SocialButtons } from "../buttons";
 
 const footerStyle = css({
@@ -16,4 +17,4 @@ export const Footer: React.FC = () => {
       </Toolbar>
     </AppBar>
   );
-}
+};

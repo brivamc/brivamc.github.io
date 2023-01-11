@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { Button, css } from "@mui/material";
 import React from "react";
+
 import { urls } from "../../util";
 
 const buttonStyle = css({
@@ -24,4 +25,4 @@ export const MailToButton: React.FC = () => {
       Contact
     </Button>
   );
-}
+};

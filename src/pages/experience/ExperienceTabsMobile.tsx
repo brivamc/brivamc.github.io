@@ -1,25 +1,26 @@
 /** @jsxImportSource @emotion/react */
-import { css, Grid, IconButton, List, ListItem, ListItemIcon, ListItemText, Tab, Tabs, tabsClasses, Typography } from "@mui/material";
-import React, { useRef, useState } from "react";
-import { ExperienceHeader } from "./ExperienceHeader";
-import { MyJobExperience } from "./experienceText";
-import { MdNavigateNext, MdNavigateBefore, MdKeyboardArrowRight } from "react-icons/md";
-import _ from "lodash";
 import { TabContext, TabPanel } from "@mui/lab";
-import { ExperienceMenu } from "./ExperienceMenu";
+import { css, Grid, IconButton, List, ListItem, ListItemIcon, ListItemText, Tab, Tabs, tabsClasses, TabScrollButtonProps, Typography } from "@mui/material";
+import _ from "lodash";
+import React, { useRef, useState } from "react";
+import { MdKeyboardArrowRight, MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+
 import { formatDate } from "../../util";
+import { ExperienceHeader } from "./ExperienceHeader";
+import { ExperienceMenu } from "./ExperienceMenu";
+import { MyJobExperience } from "./experienceText";
 
 /* TODO: condense in some way? */
 
 const tabsStyle = css({
   [`& .${tabsClasses.scrollButtons}`]: {
-    '&.Mui-disabled': { opacity: 0.3 }
+    "&.Mui-disabled": { opacity: 0.3 }
   },
   "& .MuiTab-wrapped": {
     textTransform: "none",
     margin: "auto"
   },
-  '& .MuiTabs-indicator': {
+  "& .MuiTabs-indicator": {
     display: "none"
   },
   minWidth: "20vw"
@@ -49,7 +50,7 @@ export const ExperienceTabsMobile: React.FC<{
   jobExperiences: MyJobExperience[];
   selectedTab: MyJobExperience;
   setSelectedTab: (value: MyJobExperience) => void;
-}> = ({ jobExperiences, selectedTab, setSelectedTab}) => {
+}> = ({ jobExperiences, selectedTab, setSelectedTab }) => {
   const [open, setOpen] = useState(false);
   const [isTabSelected, setIsTabSelected] = useState(false);
   const anchorEl = useRef(null);
@@ -89,36 +90,35 @@ export const ExperienceTabsMobile: React.FC<{
             aria-label="My Job Experiences"
             variant="scrollable"
             css={tabsStyle}
-            ScrollButtonComponent={(props) => {
+            ScrollButtonComponent={(props: TabScrollButtonProps) => {
               const currentIndex = _.findIndex(jobExperiences, selectedTab);
-              const isNextClickable = currentIndex !== -1 && jobExperiences[currentIndex + 1] !== undefined;
-              const isPrevClickable = currentIndex !== -1 && jobExperiences[currentIndex - 1] !== undefined;
-            
+              const isNextClickable = jobExperiences.includes(jobExperiences[currentIndex + 1]);
+              const isPrevClickable = jobExperiences.includes(jobExperiences[currentIndex - 1]);
               const handleNextClick = () => {
                 if (!isNextClickable) {
                   return;
                 }
-                return setSelectedTab(jobExperiences[currentIndex + 1]);
+                setSelectedTab(jobExperiences[currentIndex + 1]);
               };
             
               const handlePrevClick = () => {
                 if (!isPrevClickable) {
                   return;
                 }
-                return (setSelectedTab(jobExperiences[currentIndex - 1]));
+                setSelectedTab(jobExperiences[currentIndex - 1]);
               };
               if (props.direction === "left") {
                 return (
                   <IconButton aria-label="go to previous experience" onClick={handlePrevClick} disabled={!isPrevClickable}>
                     <MdNavigateBefore />
-                  </IconButton>);
-              } else if (props.direction === "right") {
+                  </IconButton>
+                );
+              } else {
                 return (
                   <IconButton aria-label="go to next experience" onClick={handleNextClick} disabled={!isNextClickable}>
                     <MdNavigateNext />
-                  </IconButton>);
-              } else {
-                return (null);
+                  </IconButton>
+                );
               }
             }}
           >
@@ -128,9 +128,7 @@ export const ExperienceTabsMobile: React.FC<{
               wrapped
               css={[mobileTabStyle, isTabSelected ? tabButtonStyleSelected : tabButtonStyle]}
               value={selectedTab.employer}
-              label={
-                <ExperienceHeader justifyContent="center" hideJobTitle experience={selectedTab} increaseFontElement="employer" />
-              }
+              label={<ExperienceHeader justifyContent="center" hideJobTitle experience={selectedTab} increaseFontElement="employer" />}
             />
           </Tabs>
           <ExperienceMenu

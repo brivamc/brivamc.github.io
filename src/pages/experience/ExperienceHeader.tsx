@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, Grid, GridProps, Typography } from "@mui/material";
 import React from "react";
+
 import { MyJobExperience } from "./experienceText";
 
 const textStyle = css({
@@ -34,16 +35,14 @@ export const ExperienceHeader: React.FC<GridProps & {
           <Typography css={[textStyle, increaseFontElement === "jobTitle" && textStyleFontLarge]} color="primary">
             {title}
           </Typography>
-        </Grid>
-      }
+        </Grid>}
       {!hideEmployer &&
         <Grid item>
           <Typography css={[textStyle, increaseFontElement === "employer" && textStyleFontLarge]} color="secondary">
             {!hideJobTitle && "@ "}
             {`${employer}`}
           </Typography>
-        </Grid>
-      }
+        </Grid>}
     </Grid>
   );
-}
+};

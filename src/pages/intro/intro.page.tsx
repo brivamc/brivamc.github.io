@@ -2,6 +2,7 @@
 import { css, Fade, Grid, Slide, Typography } from "@mui/material";
 import React from "react";
 import { useRef } from "react";
+
 import { SocialButtons } from "../../components/buttons";
 import { ContentContainer, TextCarousel } from "../../components/util";
 import { PortfolioPageProps } from "../../types/pages";
@@ -73,14 +74,14 @@ const containerMobileStyle = css({
 });
 
 export const IntroPage: React.FC<PortfolioPageProps> = ({
-  isMobile
+  isMobile = false
 }) => {
   const containerRef = useRef(null);
 
   return (
     <ContentContainer
       sx={[
-        (theme) => ({
+        theme => ({
           [theme.breakpoints.between("sm", "md")]: containerMdStyle
         })
       ]}
@@ -94,8 +95,8 @@ export const IntroPage: React.FC<PortfolioPageProps> = ({
             <Typography
               css={[textStyle, introTextStyle]}
               variant="overline"
-              >
-                {INTRO_TEXT}
+            >
+              {INTRO_TEXT}
             </Typography>
           </Grid>
         </Slide>
@@ -103,7 +104,7 @@ export const IntroPage: React.FC<PortfolioPageProps> = ({
           <Grid item>
             <Typography
               sx={[
-                (theme) => ({
+                theme => ({
                   [theme.breakpoints.only("xs")]: xsNameTextStyle,
                   [theme.breakpoints.between("xs", "sm")]: smNameTextStyle,
                   [theme.breakpoints.between("sm", "md")]: mdNameTextStyle,
@@ -115,7 +116,7 @@ export const IntroPage: React.FC<PortfolioPageProps> = ({
               fontWeight={600}
               variant="h1"
             >
-                {MY_FIRST_NAME}
+              {MY_FIRST_NAME}
             </Typography>
           </Grid>
         </Slide>
@@ -123,7 +124,7 @@ export const IntroPage: React.FC<PortfolioPageProps> = ({
           <Grid item>
             <Typography
               sx={[
-                (theme) => ({
+                theme => ({
                   [theme.breakpoints.only("xs")]: xsNameTextStyle,
                   [theme.breakpoints.between("xs", "sm")]: smNameTextStyle,
                   [theme.breakpoints.between("sm", "md")]: mdNameTextStyle,
@@ -176,4 +177,4 @@ export const IntroPage: React.FC<PortfolioPageProps> = ({
       </Grid>
     </ContentContainer>
   );
-}
+};

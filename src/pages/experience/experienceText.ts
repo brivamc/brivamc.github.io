@@ -58,4 +58,4 @@ export const myJobExperiences: MyJobExperience[] = [
     ],
     link: "https://tripwizard.rvlife.com/"
   },
-]
+];

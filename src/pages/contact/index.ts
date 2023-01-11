@@ -9,4 +9,4 @@ export const contactPage: Page = {
       title: "Contact Me"
     }
   ]
-}
+};

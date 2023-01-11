@@ -1,7 +1,7 @@
 import { ListItem, ListItemButton, ListItemButtonProps, ListItemIcon, ListItemText, PaletteMode } from "@mui/material";
 import _ from "lodash";
 import React from "react";
-import { MdOutlineDarkMode, MdLightMode } from "react-icons/md";
+import { MdLightMode, MdOutlineDarkMode } from "react-icons/md";
 
 export const LightDarkModeListItem: React.FC<ListItemButtonProps & {
   mode: PaletteMode;

@@ -1,9 +1,10 @@
-import React from "react";
-import MenuItem from '@mui/material/MenuItem';
-import { MyJobExperience } from "./experienceText";
 import { ClickAwayListener, Grow, MenuList, Paper, Popper } from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
 import _ from "lodash";
+import React from "react";
+
 import { darkThemePalette, lightThemePalette } from "../../components/layout/theme";
+import { MyJobExperience } from "./experienceText";
 
 export const ExperienceMenu: React.FC<{
   anchorEl: React.RefObject<HTMLButtonElement>;
@@ -35,7 +36,7 @@ export const ExperienceMenu: React.FC<{
     <Popper
       open={isOpen}
       placement="bottom"
-      anchorEl={anchorEl?.current}
+      anchorEl={anchorEl.current}
       transition
       sx={{
         paddingTop: ".5%"
@@ -47,7 +48,7 @@ export const ExperienceMenu: React.FC<{
         >
           <Paper
             sx={[
-              (theme) => ({
+              theme => ({
                 backgroundColor: theme.palette.mode === "light" ? lightThemePalette.secondary : darkThemePalette.secondary,
                 border: theme.palette.mode === "light" ? `2px ${lightThemePalette.primary.main} solid` : `2px ${darkThemePalette.primary.main} solid` 
               })
@@ -56,13 +57,16 @@ export const ExperienceMenu: React.FC<{
           >
             <ClickAwayListener onClickAway={handleClickAway}>
               <MenuList autoFocusItem={isOpen}>
-                {jobExperiences.map(job =>
+                {jobExperiences.map(job => (
                   <MenuItem
-                    onClick={() => handleMenuClick(job.employer)}
+                    onClick={() => {
+                      handleMenuClick(job.employer); 
+                    }}
                     key={job.index}
                   >
                     {job.employer}
                   </MenuItem>
+                )
                 )}
               </MenuList>
             </ClickAwayListener>
@@ -71,4 +75,4 @@ export const ExperienceMenu: React.FC<{
       )}
     </Popper>
   );
-}
+};

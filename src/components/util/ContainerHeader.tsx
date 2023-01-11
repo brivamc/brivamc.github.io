@@ -13,4 +13,4 @@ export const ContainerHeader: React.FC<{
       </Grid>
     </Grid>
   );
-}
+};

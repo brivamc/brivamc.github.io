@@ -1,10 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { Button, css, Grid, Typography } from "@mui/material";
 import React from "react";
-import { ContentContainer } from "../../components/util";
 import { FiExternalLink } from "react-icons/fi";
-import { urls } from "../../util";
+
+import { ContentContainer } from "../../components/util";
 import { PortfolioPageProps } from "../../types/pages";
+import { urls } from "../../util";
 
 const buttonStyle = css({
   height: "3em",
@@ -17,7 +18,7 @@ const buttonStyle = css({
 const MY_PROJECTS_TEXT = "Check out my Github repo to view my projects including this website!";
 
 export const ProjectsPage: React.FC<PortfolioPageProps> = ({
-  isMobile
+  isMobile = false
 }) => {
   return (
     <ContentContainer
@@ -32,22 +33,20 @@ export const ProjectsPage: React.FC<PortfolioPageProps> = ({
           </Typography>
         </Grid>
         <Grid item>
-        <Button
-          endIcon={
-            <FiExternalLink size={25} />
-          }
-          css={buttonStyle}
-          aria-label="view my projects"
-          target="_blank"
-          rel="noopener noreferrer"
-          href={urls.my.github.repo}
-          variant="outlined"
-          disableElevation
-        >
-          View Projects
-        </Button>
+          <Button
+            endIcon={<FiExternalLink size={25} />}
+            css={buttonStyle}
+            aria-label="view my projects"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={urls.my.github.repo}
+            variant="outlined"
+            disableElevation
+          >
+            View Projects
+          </Button>
         </Grid>
       </Grid>
     </ContentContainer>
   );
-}
+};

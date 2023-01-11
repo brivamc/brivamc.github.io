@@ -8,4 +8,4 @@ export const introPage: Page = {
       tag: "main"
     }
   ]
-}
+};

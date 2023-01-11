@@ -1,7 +1,8 @@
 import { Grid, PaletteMode } from "@mui/material";
 import React, { useState } from "react";
-import { DownloadResumeButton, LightDarkThemeButton, NavButton } from ".";
+
 import { ButtonNav } from "../layout";
+import { DownloadResumeButton, LightDarkThemeButton, NavButton } from ".";
 
 export const NavButtons: React.FC<{
   navButtons: ButtonNav[];
@@ -16,12 +17,17 @@ export const NavButtons: React.FC<{
 
   return (
     <Grid container spacing={1}>
-      {navButtons.map(({ label, url }) =>
+      {navButtons.map(({ label, url }) => (
         <Grid key={label} item>
-          <NavButton isSelected={selected === url} onClick={() => handleClick(url)} url={url}>
+          <NavButton
+            isSelected={selected === url} onClick={() => {
+              handleClick(url); 
+            }} url={url}
+          >
             {label}
           </NavButton>
         </Grid>
+      )
       )}
       <Grid item>
         <DownloadResumeButton />

@@ -1,12 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css, Grid, Link, Typography } from "@mui/material";
 import React from "react";
-import { ContentContainer } from "../../components/util";
+
 import Headshot from "../../assets/images/bree-headshot.jpg";
-import { aboutTechnologiesText, myTechnologies } from "./aboutMeText";
 import { DevTechnologyButton } from "../../components/buttons/DevTechnologyButton";
-import { urls } from "../../util";
+import { ContentContainer } from "../../components/util";
 import { PortfolioPageProps } from "../../types/pages";
+import { urls } from "../../util";
+import { aboutTechnologiesText, myTechnologies } from "./aboutMeText";
 
 const imgStyle = css({
   maxWidth: "40wv",
@@ -30,10 +31,14 @@ const mobileTechContainerStyle = css({
   maxWidth: "100vw"
 });
 
-const makeHyperlink = (text: string, link: string) => (<Link aria-label="my experience" css={linkStyle} underline="hover" href={link} rel="noopener noreferrer" target="_blank">{text}</Link>);
+const makeHyperlink = (text: string, link: string) => (
+  <Link aria-label="my experience" css={linkStyle} underline="hover" href={link} rel="noopener noreferrer" target="_blank">
+    {text}
+  </Link>
+);
 
 export const AboutPage: React.FC<PortfolioPageProps> = ({
-  isMobile
+  isMobile = false
 }) => {
   const title = "About Me";
 
@@ -59,8 +64,17 @@ export const AboutPage: React.FC<PortfolioPageProps> = ({
             </Grid>
             <Grid item>
               <Typography css={textStyle}>
-                Recently, I've had the privilege of working at an {makeHyperlink("RV trip planning service", urls.job.rvLife)}, a {makeHyperlink("website and IT company", urls.job.fineLine)},
-                and a {makeHyperlink("cybersecurity start-up", urls.job.hyperqube)}. Now, I'm seeking new challenges and exploring new opportunities in my career!
+                Recently, I've had the privilege of working at an 
+                {" "}
+                {makeHyperlink("RV trip planning service", urls.job.rvLife)}
+                , a 
+                {" "}
+                {makeHyperlink("website and IT company", urls.job.fineLine)}
+                ,
+                and a 
+                {" "}
+                {makeHyperlink("cybersecurity start-up", urls.job.hyperqube)}
+                . Now, I'm seeking new challenges and exploring new opportunities in my career!
               </Typography>
             </Grid>
             <Grid item>
@@ -95,4 +109,4 @@ export const AboutPage: React.FC<PortfolioPageProps> = ({
       </Grid>
     </ContentContainer>
   );
-}
+};

@@ -9,4 +9,4 @@ export const aboutPage: Page = {
       title: "About Me"
     }
   ]
-}
+};

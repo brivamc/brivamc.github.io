@@ -3,6 +3,7 @@ import { css, Grid, GridSpacing, IconButton } from "@mui/material";
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+
 import { SocialIcon } from "../../types/social.icon";
 import { urls } from "../../util";
 
@@ -41,7 +42,7 @@ export const SocialButtons: React.FC<{
 }> = ({ size = "large", alignButtons = "end", spacing = 2 }) => {
   return (
     <Grid container alignItems="center" justifyContent={alignButtons} spacing={spacing}>
-      {socialButtons.map(({ name, icon: Icon, url }) =>
+      {socialButtons.map(({ name, icon: Icon, url }) => (
         <Grid item key={name}>
           <IconButton
             aria-label={`click to go to my ${name}`}
@@ -55,7 +56,8 @@ export const SocialButtons: React.FC<{
             <Icon />
           </IconButton>
         </Grid>
+      )
       )}
     </Grid>
   );
-}
+};

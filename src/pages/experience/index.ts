@@ -9,4 +9,4 @@ export const experiencePage: Page = {
       title: "My Experience"
     }
   ]
-}
+};

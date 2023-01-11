@@ -2,6 +2,8 @@
 import { Button, ButtonProps, css } from "@mui/material";
 import React from "react";
 
+import { darkThemePalette, lightThemePalette } from "../layout/theme";
+
 interface NavButtonProps {
   url: string;
   children: React.ReactNode;
@@ -19,7 +21,13 @@ export const NavButton: React.FC<NavButtonProps & ButtonProps & {
     <Button
       aria-label="navigation button"
       href={url}
-      color={isSelected ? "secondary" : "primary"}
+      sx={[
+        theme => (theme.palette.mode === "light" ? {
+          color: isSelected ? lightThemePalette.primary.light : "primary"
+        } : {
+          color: isSelected ? darkThemePalette.primary.light : "primary"
+        })
+      ]}
       css={buttonStyle}
       {...rest}
     >

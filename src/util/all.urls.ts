@@ -60,4 +60,4 @@ export const urls: AllURLs = {
     postgresql: "https://www.postgresql.org/",
     graphql: "https://graphql.org/"
   }
-}
+};
