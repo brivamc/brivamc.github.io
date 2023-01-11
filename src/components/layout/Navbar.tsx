@@ -1,39 +1,71 @@
-import React, { useState } from "react"
-import { Link } from "react-router-dom"
-import { AppBar, Grid, Toolbar, Typography } from "@mui/material";
+/** @jsxImportSource @emotion/react */
+import { AppBar, css, Fade, Grid, PaletteMode, Toolbar } from "@mui/material";
+import React from "react";
 
-/* TODO makestyles deprecated, use emotion instead */
-/*
-const useStyles = makeStyles({
-  appBar: {
-    zIndex: 1300,
-    backgroundColor: theme.palette.primary[800],
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
-  },
-  toolbar: {
-    paddingLeft: theme.spacing(4)
-  },
-  menuContainer: {
-    paddingRight: theme.spacing(10)
-  }
+import LogoLight from "../../assets/images/my-logo-light.png";
+import LogoDark from "../../assets/images/my-logo-dark.png";
+import { NavButtons } from "../buttons";
+import { NavbarMenu } from "./NavbarMenu";
+
+const logoStyle = css({
+  length: "64px",
+  width: "64px"
 });
 
-add classnames to elements (navbar-container, navbar-logo, nav-links, nav-menu, nav-menu-active, nav-item, etc)
-*/
+export interface ButtonNav {
+  label: string;
+  url: string;
+}
 
-export const Navbar: React.FC = () => {
+const navButtons: ButtonNav[] = [
+  {
+    label: "About Me",
+    url: "/#about"
+  },
+  {
+    label: "Experience",
+    url: "/#experience"
+  },
+  {
+    label: "Projects",
+    url: "/#projects"
+  },
+  {
+    label: "Contact",
+    url: "/#contact"
+  }
+];
+
+export const Navbar: React.FC<{
+  isMobile?: boolean;
+  mode: PaletteMode;
+  onModeClick: () => void;
+}> = ({ isMobile = false, mode, onModeClick }) => {
   return (
     <>
-      <AppBar color="inherit" enableColorOnDark>
+      <AppBar color="inherit" elevation={0} enableColorOnDark>
         <Toolbar>
-          <Typography variant="h6" component="div">
-            navbar
-          </Typography>
+          <Grid justifyContent="space-between" alignItems="center" container>
+            <Grid item>
+              <a href="/">
+                <img alt="my-logo" css={logoStyle} src={mode === "light" ? LogoLight : LogoDark} />
+              </a>
+            </Grid>
+            <Grid item>
+              <Fade in timeout={1000}>
+                {isMobile ?
+                  <Grid>
+                    <NavbarMenu mode={mode} onModeClick={onModeClick} navButtons={navButtons} />
+                  </Grid> :
+                  <Grid>
+                    <NavButtons mode={mode} onModeClick={onModeClick} navButtons={navButtons} />
+                  </Grid>}
+              </Fade>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
       <Toolbar />
     </>
   );
-}
+};

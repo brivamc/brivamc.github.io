@@ -19,7 +19,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsxImportSource": "@emotion/react",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "typeRoots": ["src/types"]
   },
   "include": [
     "src"
