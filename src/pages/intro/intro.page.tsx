@@ -59,10 +59,6 @@ const xsNameTextStyle = css({
   fontSize: "2rem"
 });
 
-const gridStyle = css({
-  paddingTop: "1%"
-});
-
 const containerMdStyle = css({
   marginTop: "5%",
   marginBottom: "20%"
@@ -89,7 +85,7 @@ export const IntroPage: React.FC<PortfolioPageProps> = ({
       isMobile={isMobile}
       justifyContent="start"
     >
-      <Grid ref={containerRef} container css={gridStyle} direction="column" spacing={1}>
+      <Grid ref={containerRef} container direction="column" spacing={1}>
         <Slide in direction="right" container={containerRef.current} timeout={1000}>
           <Grid item>
             <Typography
