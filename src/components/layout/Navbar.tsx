@@ -2,8 +2,8 @@
 import { AppBar, css, Fade, Grid, PaletteMode, Toolbar } from "@mui/material";
 import React from "react";
 
-import LogoLight from "../../assets/images/my-logo-light.png";
 import LogoDark from "../../assets/images/my-logo-dark.png";
+import LogoLight from "../../assets/images/my-logo-light.png";
 import { NavButtons } from "../buttons";
 import { NavbarMenu } from "./NavbarMenu";
 

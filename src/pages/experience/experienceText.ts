@@ -28,7 +28,7 @@ export const myJobExperiences: MyJobExperience[] = [
     endDate: new Date(2020, 12),
     jobDetails: [
       "Collaborated as a team of 4 to develop and maintain over 100 websites ranging from high to low traffic using Content Management Systems such as WordPress, Magento, and Joomla",
-      "Managed several databases and servers including migrating sites to different servers, launching deveopment sites to live versions, and archiving old sites",
+      "Managed several databases and servers including migrating sites to different servers, launching development sites to live versions, and archiving old sites",
       "Created custom templates and refined custom modules using PHP",
       "Communicated regularly with clients to implement any bug fixes or feature requests"
     ],

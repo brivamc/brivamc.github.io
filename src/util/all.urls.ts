@@ -40,7 +40,7 @@ export const urls: AllURLs = {
       profile: "https://github.com/brivamc",
       repo: "https://github.com/brivamc?tab=repositories"
     },
-    email: "brivamc@udel.edu"
+    email: "bree.mccausland@gmail.com"
   },
   job: {
     rvLife: "https://tripwizard.rvlife.com/",
